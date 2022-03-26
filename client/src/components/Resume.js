@@ -3,6 +3,8 @@ import Profile from './Profile';
 import Education from './Education';
 import Projects from './Projects';
 import Skills from './Skills';
+import Experience from './Experience';
+import Extras from './Extras';
 
 export class Resume extends Component{
     state = {
@@ -97,10 +99,6 @@ export class Resume extends Component{
         achdesc5 : '',
         ach6 : '',
         achdesc6 : '',
-        ach7 : '',
-        achdesc7 : '',
-        ach8 : '',
-        achdesc8 : '',
 
     };
 
@@ -217,10 +215,6 @@ export class Resume extends Component{
             achdesc5,
             ach6,
             achdesc6,
-            ach7,
-            achdesc7,
-            ach8,
-            achdesc8,
         } = this.state;
 
         const values = {
@@ -313,10 +307,6 @@ export class Resume extends Component{
             achdesc5,
             ach6,
             achdesc6,
-            ach7,
-            achdesc7,
-            ach8,
-            achdesc8,
         };
             // <div className="App mt-3">
             //     <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
@@ -349,6 +339,7 @@ export class Resume extends Component{
                         <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
                         <Education
                             nextStep={this.nextStep}
+                            prevStep={this.prevStep}
                             handleChange={this.handleChange}
                             values={values}
                         />
@@ -365,6 +356,7 @@ export class Resume extends Component{
                             nextStep={this.nextStep}
                             handleChange={this.handleChange}
                             values={values}
+                            prevStep={this.prevStep}
                         />
                         </div>
                     </div>
@@ -379,37 +371,40 @@ export class Resume extends Component{
                             nextStep={this.nextStep}
                             handleChange={this.handleChange}
                             values={values}
+                            prevStep={this.prevStep}
                         />
                         </div>
                     </div>
                 );
 
-        //     case 5:
-        //         return (
-        //             <div className="App mt-3">
-        //                 <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
-        //                 <Experience
-        //                     nextStep={this.nextStep}
-        //                     handleChange={this.handleChange}
-        //                     values={values}
-        //                 />
-        //                 </div>
-        //             </div>
-        //         );
+            case 5:
+                return (
+                    <div className="App mt-3">
+                        <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
+                        <Experience
+                            nextStep={this.nextStep}    
+                            handleChange={this.handleChange}
+                            values={values}
+                            prevStep={this.prevStep}
+                        />
+                        </div>
+                    </div>
+                );
 
 
-        //     case 6:
-        //         return (
-        //             <div className="App mt-3">
-        //                 <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
-        //                 <Extras
-        //                     nextStep={this.nextStep}
-        //                     handleChange={this.handleChange}
-        //                     values={values}
-        //                 />
-        //                 </div>
-        //             </div>
-        //         );
+            case 6:
+                return (
+                    <div className="App mt-3">
+                        <div className="container col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
+                        <Extras
+                            nextStep={this.nextStep}
+                            handleChange={this.handleChange}
+                            values={values}
+                            prevStep = {this.prevStep}
+                        />
+                        </div>
+                    </div>
+                );
 
 
             default:

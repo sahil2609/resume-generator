@@ -2,6 +2,7 @@
   "name": "resume-generator",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@date-io/date-fns": "^2.13.1",
     "@material-ui/core": "^4.12.3",
@@ -27,7 +28,6 @@
     "stream": "^0.0.2",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost: 3000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

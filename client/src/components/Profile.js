@@ -10,10 +10,11 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Card, CardHeader, CardContent} from '@material-ui/core';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 1,
+    margin: theme.spacing(1),
   },
   padding: {
     padding: theme.spacing.unit,
@@ -32,7 +33,7 @@ class Profile extends Component {
     return(
     <Paper elevation={1} style = {{textAlign : "center" }} className={classes.padding}>
       <Card>
-        <CardHeader title="Profile" style = {{textAlign : "center" }}/>
+        <CardHeader title="Personal Details" style = {{textAlign : "center" }}/>
       </Card>
       <CardContent>
       <Grid container spacing={2} alignItems = "center">
@@ -40,6 +41,7 @@ class Profile extends Component {
           <TextField
             id="outlined-basic"  variant="outlined"
             margin="dense"
+            name ="firstname"
             label="First Name"
             style={{width: '80%'}}
             required
@@ -55,7 +57,8 @@ class Profile extends Component {
             label="Last Name"
             style={{width: '80%'}}
             required
-            value={values.firstname}
+            name ="lastname"
+            value={values.lastname}
             onChange={this.props.handleChange}
 
           />
@@ -67,11 +70,18 @@ class Profile extends Component {
             label="Email"
             style={{width: '80%'}}
             required
-            value={values.firstname}
+            name ="email"
+            value={values.email}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <EmailIcon />
+                </InputAdornment>
+              ),
+            }}
 
           />
-          <EmailIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={6} sm={12} xs={12} lg={6} style ={{position: 'relative'}}>
           <TextField
@@ -80,11 +90,18 @@ class Profile extends Component {
             label="Phone Number"
             style={{width: '80%'}}
             required
-            value={values.firstname}
+            name ="phone"
+            value={values.phone}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <PhoneIcon />
+                </InputAdornment>
+              ),
+            }}
 
           />
-          <PhoneIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={6} sm={12} xs={12} lg={6} style ={{position: 'relative'}}>
           <TextField
@@ -92,11 +109,18 @@ class Profile extends Component {
             margin="dense"
             label="GitHub"
             style={{width: '80%'}}
-            value={values.firstname}
+            name ="github"
+            value={values.github}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <GitHubIcon />
+                </InputAdornment>
+              ),
+            }}
 
           />
-          <GitHubIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={6} sm={12} xs={12} lg={6} style ={{position: 'relative'}}>
           <TextField
@@ -104,11 +128,18 @@ class Profile extends Component {
             margin="dense"
             label="Your Website"
             style={{width: '80%'}}
-            value={values.firstname}
+            name ="linkedin"
+            value={values.linkedin}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LanguageIcon />
+                </InputAdornment>
+              ),
+            }}
             
           />
-          <LanguageIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={6} sm={12} xs={12} lg={6} style ={{position: 'relative'}}>
           <TextField
@@ -116,11 +147,18 @@ class Profile extends Component {
             margin="dense"
             label="Linked In"
             style={{width: '80%'}}
-            value={values.firstname}
+            name ="socialmedia"
+            value={values.socialmedia}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LinkedInIcon />
+                </InputAdornment>
+              ),
+            }}
 
           />
-          <LinkedInIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
 
         </Grid>
         <Grid item md={6} sm={12} xs={12} lg={6} style ={{position: 'relative'}}>
@@ -129,10 +167,18 @@ class Profile extends Component {
             margin="dense"
             label="Any other social media handle"
             style={{width: '80%'}}
+            name ="website"
+            value={values.website}
             onChange={this.props.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <InstagramIcon />
+                </InputAdornment>
+              ),
+            }}
             
           />
-          <InstagramIcon  style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
           
         </Grid>
       </Grid>
@@ -143,7 +189,6 @@ class Profile extends Component {
                   <Button
                     variant="contained"
                     color="secondary"
-                    onClick={this.nextStep}
                     disabled
                     startIcon={<NavigateBeforeIcon />}
                   >

@@ -6,10 +6,11 @@ import SchoolIcon from '@material-ui/icons/School';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 1,
+    margin: theme.spacing(1),
   },
   padding: {
     padding: theme.spacing.unit,
@@ -22,6 +23,10 @@ class Education extends Component {
   continue = e => {
     e.preventDefault ();
     this.props.nextStep ();
+  };
+  back = e => {
+    e.preventDefault ();
+    this.props.prevStep ();
   };
   render() {
     const {values} = this.props;
@@ -39,9 +44,18 @@ class Education extends Component {
             margin="dense"
             label="College/University"
             style={{width: '80%'}}
+            name ="college"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <SchoolIcon />
+                </InputAdornment>
+              ),
+            }}
+            value={values.college}
             required
+            onChange={this.props.handleChange}
           />
-          <SchoolIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4}style ={{position: 'relative'}}>
           <TextField
@@ -50,9 +64,18 @@ class Education extends Component {
             label="From Year"
             type="date"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="from1"
+            value={values.from1}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -62,9 +85,18 @@ class Education extends Component {
             type="date"
             label="To Year"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="to1"
+            value={values.to1}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4}>
           <TextField
@@ -72,7 +104,10 @@ class Education extends Component {
             margin="dense"
             label="Qualification"
             style={{width: '80%'}}
+            name ="qualification1"
+            value={values.qualification1}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4}>
@@ -81,7 +116,10 @@ class Education extends Component {
             margin="dense"
             label="Department"
             style={{width: '80%'}}
+            name ="department"
+            value={values.department}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -91,7 +129,10 @@ class Education extends Component {
             margin="dense"
             label="CGPA/Percentage"
             style={{width: '80%'}}
+            name ="description1"
+            value={values.description1}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -108,9 +149,18 @@ class Education extends Component {
             margin="dense"
             label="School (Secondary)"
             style={{width: '80%'}}
+            name ="school"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <SchoolIcon />
+                </InputAdornment>
+              ),
+            }}
+            value={values.school}
             required
+            onChange={this.props.handleChange}
           />
-          <SchoolIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
           <TextField
@@ -119,9 +169,18 @@ class Education extends Component {
             label="From Year"
             type="date"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="from2"
+            value={values.from2}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -131,9 +190,18 @@ class Education extends Component {
             type="date"
             label="To Year"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="to2"
+            value={values.to2}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4}>
           <TextField
@@ -141,7 +209,10 @@ class Education extends Component {
             margin="dense"
             label="Qualification"
             style={{width: '80%'}}
+            name ="qualification2"
+            value={values.qualification2}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -151,7 +222,10 @@ class Education extends Component {
             margin="dense"
             label="CGPA/Percentage"
             style={{width: '90%'}}
+            name ="description2"
+            value={values.description2}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -167,10 +241,19 @@ class Education extends Component {
             id="outlined-basic"  variant="outlined"
             margin="dense"
             label="School (Senior Secondary)"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <SchoolIcon />
+                </InputAdornment>
+              ),
+            }}
             style={{width: '80%'}}
+            name ="school2"
+            value={values.school2}
             required
+            onChange={this.props.handleChange}
           />
-          <SchoolIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
           <TextField
@@ -179,9 +262,18 @@ class Education extends Component {
             label="From Year"
             type="date"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="from3"
+            value={values.from3}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -190,10 +282,19 @@ class Education extends Component {
             margin="dense"
             type="date"
             label="To Year"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DateRangeIcon />
+                </InputAdornment>
+              ),
+            }}
             style={{width: '80%'}}
+            name ="to3"
+            value={values.to3}
             required
+            onChange={this.props.handleChange}
           />
-          <DateRangeIcon style={{position: 'absolute', right: 180, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4}>
           <TextField
@@ -201,7 +302,10 @@ class Education extends Component {
             margin="dense"
             label="Qualification"
             style={{width: '80%'}}
+            name ="qualification3"
+            value={values.qualification3}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -210,8 +314,11 @@ class Education extends Component {
             id="outlined-basic"  variant="outlined"
             margin="dense"
             label="CGPA/Percentage"
+            name ="description3"
+            value={values.description3}
             style={{width: '90%'}}
             required
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>

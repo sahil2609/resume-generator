@@ -2,20 +2,19 @@ import {Row, Col} from 'react-bootstrap';
 import React, {Component} from 'react';
 import {Paper, withStyles, Grid, TextField, Button, Container,Divider} from '@material-ui/core';
 import {Card, CardHeader, CardContent} from '@material-ui/core';
-import LinkIcon from '@material-ui/icons/Link';
-import TitleIcon from '@material-ui/icons/Title';
+import axios from 'axios';
 import DescriptionIcon from '@material-ui/icons/Description';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import TimelapseIcon from '@material-ui/icons/Timelapse';
-import EventSeatIcon from '@material-ui/icons/EventSeat';
-import BusinessIcon from '@material-ui/icons/Business';
+import {saveAs} from 'file-saver';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+
 
 const styles = theme => ({
     margin: {
-      margin: theme.spacing.unit * 1,
+        margin: theme.spacing(1),
     },
     padding: {
       padding: theme.spacing.unit,
@@ -28,6 +27,30 @@ const styles = theme => ({
     continue = e => {
         e.preventDefault ();
         this.props.nextStep ();
+    };
+    back = e => {
+        e.preventDefault ();
+        this.props.prevStep ();
+    };
+    createAndDownloadPDF = () => {
+        axios
+        .post ('/create-pdf', this.props.values)
+        .then (() => {
+        axios
+        .get ('fetch-pdf', {responseType: 'arraybuffer'})
+        .then (res => {
+        const pdfBlob = new Blob ([res.data], {type:
+        'application/pdf'});
+        saveAs (pdfBlob, `${this.props.values.firstname}'s
+        Resume.pdf`);
+        })
+        .catch (err => {
+            console.log (err);
+        });
+        })
+        .catch (err => {
+            
+        });
     };
     render(){
         const {values} = this.props;
@@ -52,6 +75,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach1"
+                value={values.ach1}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -69,6 +95,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc1"
+                value={values.achdesc1}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -90,6 +119,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach2"
+                value={values.ach2}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -107,6 +139,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc2"
+                value={values.achdesc2}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -128,6 +163,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach3"
+                value={values.ach3}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -145,6 +183,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc3"
+                value={values.achdesc3}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -166,6 +207,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach4"
+                value={values.ach4}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -183,6 +227,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc4"
+                value={values.achdesc4}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -204,6 +251,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach5"
+                value={values.ach5}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -221,6 +271,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc5"
+                value={values.achdesc5}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -242,6 +295,9 @@ const styles = theme => ({
                 margin="dense"
                 label="Title"
                 style={{width: '80%'}}
+                name ="ach6"
+                value={values.ach6}
+                onChange={this.props.handleChange}
             />
             </Grid>
 
@@ -259,6 +315,9 @@ const styles = theme => ({
                     </InputAdornment>
                 ),
                 }}
+                name ="achdesc6"
+                value={values.achdesc6}
+                onChange={this.props.handleChange}
             />
             </Grid>
         </Grid>
@@ -268,6 +327,43 @@ const styles = theme => ({
         <br />
         <br />
         </div>
+        <Container className={classes.margin}>
+          <Row>
+            <Col xs={4} />
+            <Col xs={2}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={this.back}
+                startIcon={<NavigateBeforeIcon />}
+              >
+                Back
+              </Button>
+            </Col>
+            <Col xs={2}>
+            <Button
+                variant="contained"
+                disabled
+                color="secondary"
+                onClick={this.continue}
+                endIcon={<NavigateNextIcon />}
+              >
+                Next
+              </Button>
+            </Col>
+            <Col xs={4} />
+          </Row>
+          <br/>
+          <Button
+                variant="contained"
+                color="primary"
+                onClick={this.createAndDownloadPDF}
+                endIcon={<GetAppIcon />}
+              >
+                Download Resume
+              </Button>
+        </Container>
+
         </CardContent>
         <p className="text-center text-muted">Page 6</p>
         </Paper>

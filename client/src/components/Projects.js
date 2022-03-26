@@ -7,10 +7,11 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import React, {Component} from 'react';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 1,
+    margin: theme.spacing(1),
   },
   padding: {
     padding: theme.spacing.unit,
@@ -20,6 +21,14 @@ const styles = theme => ({
 
 
 class Projects extends Component{
+  continue = e => {
+    e.preventDefault ();
+    this.props.nextStep ();
+  };
+  back = e => {
+    e.preventDefault ();
+    this.props.prevStep ();
+  };
   render() {
     const {values} = this.props;
     const {classes} = this.props;
@@ -40,8 +49,17 @@ class Projects extends Component{
             label="Title"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <TitleIcon />
+                </InputAdornment>
+              ),
+            }}  
+            name ="title1"
+            value={values.title1}
+            onChange={this.props.handleChange}
           />
-          <TitleIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
           <TextField
@@ -50,8 +68,17 @@ class Projects extends Component{
             label="Link"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LinkIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="link1"
+            value={values.link1}
+            onChange={this.props.handleChange}
           />
-          <LinkIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
@@ -61,8 +88,17 @@ class Projects extends Component{
             label="Description"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="desc1"
+            value={values.desc1}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
       </Grid>
       <br />
@@ -81,8 +117,17 @@ class Projects extends Component{
             label="Title"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <TitleIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="title2"
+            value={values.title2}
+            onChange={this.props.handleChange}
           />
-          <TitleIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
           <TextField
@@ -91,8 +136,17 @@ class Projects extends Component{
             label="Link"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LinkIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="link2"
+            value={values.link2}
+            onChange={this.props.handleChange}
           />
-          <LinkIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
@@ -102,8 +156,17 @@ class Projects extends Component{
             label="Description"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="desc2"
+            value={values.desc2}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
       </Grid>
       <br />
@@ -122,8 +185,17 @@ class Projects extends Component{
             margin="dense"
             label="Title"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <TitleIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="title3"
+            value={values.title3}
+            onChange={this.props.handleChange}
           />
-          <TitleIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
           <TextField
@@ -131,8 +203,17 @@ class Projects extends Component{
             margin="dense"
             label="Link"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LinkIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="link3"
+            value={values.link3}
+            onChange={this.props.handleChange}
           />
-          <LinkIcon  style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
@@ -140,8 +221,17 @@ class Projects extends Component{
             id="outlined-basic"  variant="outlined"
             margin="dense"
             label="Description"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="desc3"
+            value={values.desc3}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
       </Grid>
       <br />
@@ -160,8 +250,17 @@ class Projects extends Component{
             margin="dense"
             label="Title"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <TitleIcon/>
+                </InputAdornment>
+              ),
+            }}
+            name ="title4"
+            value={values.title4}
+            onChange={this.props.handleChange}
           />
-          <TitleIcon style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
           <TextField
@@ -169,8 +268,17 @@ class Projects extends Component{
             margin="dense"
             label="Link"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <LinkIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="link4"
+            value={values.link4}
+            onChange={this.props.handleChange}
           />
-          <LinkIcon  style={{position: 'absolute', right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
 
         <Grid item md={12} sm={12} xs={12} lg={12} style ={{position: 'relative'}}>
@@ -178,8 +286,17 @@ class Projects extends Component{
             id="outlined-basic"  variant="outlined"
             margin="dense"
             label="Description"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="desc4"
+            value={values.desc4}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute',right: 320, top: 25, width: 20, height: 20}}/>
         </Grid>
       </Grid>
       <br />

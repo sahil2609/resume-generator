@@ -6,10 +6,11 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import React, {Component} from 'react';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 1,
+    margin: theme.spacing(1),
   },
   padding: {
     padding: theme.spacing.unit,
@@ -19,6 +20,14 @@ const styles = theme => ({
 
 
 class Skills extends Component {
+  continue = e => {
+    e.preventDefault ();
+    this.props.nextStep ();
+  };
+  back = e => {
+    e.preventDefault ();
+    this.props.prevStep ();
+  };
   render(){
     const {values} = this.props;
     const {classes} = this.props;
@@ -36,8 +45,17 @@ class Skills extends Component {
             label="Skill 1"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead1"
+            value={values.skillhead1}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -46,8 +64,17 @@ class Skills extends Component {
             label="Description/Technologies"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc1"
+            value={values.skilldesc1}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4} style ={{position: 'relative'}}>
         <TextField
@@ -56,8 +83,17 @@ class Skills extends Component {
             label="Skill 2"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead2"
+            value={values.skillhead2}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -66,8 +102,17 @@ class Skills extends Component {
             label="Description/Technologies"
             style={{width: '80%'}}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc2"
+            value={values.skilldesc2}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4} style ={{position: 'relative'}}>
         <TextField
@@ -75,8 +120,17 @@ class Skills extends Component {
             margin="dense"
             label="Skill 3"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead3"
+            value={values.skillhead3}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -84,8 +138,17 @@ class Skills extends Component {
             margin="dense"
             label="Description/Technologies"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc3"
+            value={values.skilldesc3}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4} style ={{position: 'relative'}}>
         <TextField
@@ -93,8 +156,17 @@ class Skills extends Component {
             margin="dense"
             label="Skill 4"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead4"
+            value={values.skillhead4}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -102,8 +174,17 @@ class Skills extends Component {
             margin="dense"
             label="Description/Technologies"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon/>
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc4"
+            value={values.skilldesc4}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4} style ={{position: 'relative'}}>
         <TextField
@@ -111,8 +192,17 @@ class Skills extends Component {
             margin="dense"
             label="Skill 5"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead5"
+            value={values.skillhead5}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -120,8 +210,17 @@ class Skills extends Component {
             margin="dense"
             label="Description/Technologies"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc5"
+            value={values.skilldesc5}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={4} sm={12} xs={12} lg={4} style ={{position: 'relative'}}>
         <TextField
@@ -129,8 +228,17 @@ class Skills extends Component {
             margin="dense"
             label="Skill 6"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <AssessmentIcon />
+                </InputAdornment>
+              ),
+            }}
+            name ="skillhead6"
+            value={values.skillhead6}
+            onChange={this.props.handleChange}
           />
-          <AssessmentIcon style={{position: 'absolute', right: 90, top: 25, width: 20, height: 20}}/>
         </Grid>
         <Grid item md={8} sm={12} xs={12} lg={8} style ={{position: 'relative'}}>
           <TextField
@@ -138,8 +246,17 @@ class Skills extends Component {
             margin="dense"
             label="Description/Technologies"
             style={{width: '80%'}}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="start">
+                  <DescriptionIcon/>
+                </InputAdornment>
+              ),
+            }}
+            name ="skilldesc6"
+            value={values.skilldesc6}
+            onChange={this.props.handleChange}
           />
-          <DescriptionIcon style={{position: 'absolute', right: 130, top: 25, width: 20, height: 20}}/>
         </Grid>
       </Grid>
       <Container className={classes.margin}>

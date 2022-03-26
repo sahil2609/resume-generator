@@ -1,8 +1,6 @@
 import {Row, Col} from 'react-bootstrap';
 import {Paper, withStyles, Grid, TextField, Button, Container,Divider} from '@material-ui/core';
 import {Card, CardHeader, CardContent} from '@material-ui/core';
-import LinkIcon from '@material-ui/icons/Link';
-import TitleIcon from '@material-ui/icons/Title';
 import DescriptionIcon from '@material-ui/icons/Description';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
@@ -10,16 +8,13 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import TimelapseIcon from '@material-ui/icons/Timelapse';
 import EventSeatIcon from '@material-ui/icons/EventSeat';
 import BusinessIcon from '@material-ui/icons/Business';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import { render } from 'express/lib/response';
+import InputAdornment from '@material-ui/core/InputAdornment';  
 import React, {Component} from 'react';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 1,
+    margin: theme.spacing(1),
   },
   padding: {
     padding: theme.spacing.unit,
@@ -28,6 +23,14 @@ const styles = theme => ({
 
 
 class Experience extends Component {
+  continue = e => {
+    e.preventDefault ();
+    this.props.nextStep ();
+  };
+  back = e => {
+    e.preventDefault ();
+    this.props.prevStep ();
+  };
   render() {
     const {values} = this.props;
     const {classes} = this.props;
@@ -58,6 +61,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="head1"
+            value={values.head1}
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -74,6 +80,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="pos1"
+            value={values.pos1}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -91,6 +100,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="exduration1"
+            value={values.exduration1}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -108,6 +120,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="expdesc1"
+            value={values.expdesc1}
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -136,6 +151,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="head2"
+            value={values.head2}
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -151,6 +169,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="pos2"
+            value={values.pos2}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -167,6 +188,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="exduration2"
+            value={values.exduration2}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -183,6 +207,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="expdesc2"
+            value={values.expdesc2}
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -195,7 +222,7 @@ class Experience extends Component {
 
 
       <Card>
-        <CardHeader title="Positions of Responsibilities" style = {{textAlign : "center" }}/>
+        <CardHeader title="Positions of Responsibility" style = {{textAlign : "center" }}/>
       </Card>
       <CardContent>
       <Grid container spacing={2} alignItems="center" >
@@ -218,6 +245,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="club1"
+            value={values.club1}
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -233,6 +263,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="por1"
+            value={values.por1}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -249,6 +282,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="porduration1"
+            value={values.porduration1}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -278,6 +314,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="club2"
+            value={values.club2}
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -293,6 +332,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="por2"
+            value={values.por2}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -309,6 +351,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="porduration2"
+            value={values.porduration2}
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -337,6 +382,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="club3"
+            value={values.club3}
+            onChange={this.props.handleChange}
           />
         </Grid>
         <Grid item md={4} sm={6} xs={12} lg={4} style ={{position: 'relative'}}>
@@ -352,6 +400,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="por3"
+            value={values.por3}
+            onChange={this.props.handleChange}
           />
         </Grid>
 
@@ -368,6 +419,9 @@ class Experience extends Component {
                 </InputAdornment>
               ),
             }}
+            name ="porduration3"
+            value={values.porduration3}
+            onChange={this.props.handleChange}
           />
         </Grid>
       </Grid>
@@ -376,6 +430,32 @@ class Experience extends Component {
       <Divider />
       <br />
       <br />
+      <Container className={classes.margin}>
+          <Row>
+            <Col xs={4} />
+            <Col xs={2}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={this.back}
+                startIcon={<NavigateBeforeIcon />}
+              >
+                Back
+              </Button>
+            </Col>
+            <Col xs={2}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={this.continue}
+                endIcon={<NavigateNextIcon />}
+              >
+                Next
+              </Button>
+            </Col>
+            <Col xs={4} />
+          </Row>
+        </Container>
       </CardContent>
       <p className="text-center text-muted">Page 5</p>
     </Paper>
