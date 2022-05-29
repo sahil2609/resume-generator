@@ -1,98 +1,5 @@
-module.exports = (values) => {
-	const {
-		    firstname,
-            lastname,
-            email,
-            phone,
-            github,
-            linkedin,
-            socialmedia,
-            website,
-    
-            //Education
-            college,
-            from1,
-            to1,
-            qualification1,
-            description1,
-            department,
-            school,
-            from2,
-            to2,
-            qualification2,
-            description2,
-            school2,
-            from3,
-            to3,
-            qualification3,
-            description3,
-    
-            // Projects
-            title1,
-            link1,
-            desc1,
-            title2,
-            link2,
-            desc2,
-            title3,
-            link3 ,
-            desc3,
-            title4,
-            link4,
-            desc4,
-    
-            //Skills
-            skillhead1,
-            skilldesc1,
-            skillhead2,
-            skilldesc2,
-            skillhead3,
-            skilldesc3,
-            skillhead4,
-            skilldesc4,
-            skillhead5,
-            skilldesc5,
-            skillhead6,
-            skilldesc6,
-    
-            //Experience
-            head1,
-            pos1,
-            expdesc1,
-            head2,
-            pos2,
-            expdesc2,
-            exduration1,
-            exduration2,
-    
-            //PORs
-            por1 ,
-            club1,
-            por2 ,
-            club2,
-            por3,
-            club3,
-            porduration1,
-            porduration2,
-            porduration3,
-    
-            //Extracurriculars and Achievements
-            ach1,
-            achdesc1,
-            ach2,
-            achdesc2,
-            ach3,
-            achdesc3 ,
-            ach4,
-            achdesc4,
-            ach5,
-            achdesc5,
-            ach6,
-            achdesc6,
-	} = values;
-
-    let htmlTemplate = `
-    <!DOCTYPE html>
+module.exports = (hi) => {
+    return `<!DOCTYPE html>
     <head>
         <title>Resume - Sahil Kumar Gupta</title>
           <style>
@@ -1491,35 +1398,36 @@ module.exports = (values) => {
     color:#339900;
     text-decoration: underline;
     }
-  </style>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,600&display=swap" rel="stylesheet">
-</head>
+      </style>
+        <link href="css_resume.css" rel="stylesheet" />
+        <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,600&display=swap" rel="stylesheet">
+    </head> 
     <body>	
-        <article class="resume-wrapper text-center position-relative">
-            <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
-                <header class="resume-header pt-md-0">
-                    <div class="flex-column flex-md-row">
-                        <div class="p-4 mx-auto mx-lg-0" style="display:fex; justify-content: space-between">
-                            <div class="primary-info">
-                                <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">${firstname} ${lastname}</h1>
+      <article class="resume-wrapper text-center position-relative">
+        <div class="mx-auto text-left bg-white shadow-lg">
+            <header class="resume-header pt-md-0">
+                <div class="p-4 mr-0 mx-lg-0" style="display: flex;justify-content: space-between">
+                    <div class="p-4 mx-auto mx-lg-0" style="display: flex;">
+                        <div class="primary-info">
+                                <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">Sahil Kumar Gupta</h1>
                                 
                                 <ul class="list-unstyled">
-                                    <li>${qualification1} - ${department}</li>
-                                    <li>${college}</li>
+                                    <li>B. Tech - Mathematics and Computing</li>
+                                    <li>IIT Guwahati</li>
                                 </ul>
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><a href="${email}"><i class="far fa-envelope fa-fw mr-2" data-fa-transform="grow-3"></i>${email}</a></li>
-                                    <li><a><i class="fas fa-mobile-alt fa-fw mr-2" data-fa-transform="grow-6"></i>${phone}</a></li>
+                                    <li class="mb-2"><a href="g.sahil@iitg.ac.in"><i class="far fa-envelope fa-fw mr-2" data-fa-transform="grow-3"></i>g.sahil@iitg.ac.in</a></li>
+                                    <li><a><i class="fas fa-mobile-alt fa-fw mr-2" data-fa-transform="grow-6"></i>+91 7091405187</a></li>
                                 </ul>
                             </div>
-                            <div class="secondary-info ml-md-auto mt-2" style="float: right;">
-                                <ul class="resume-social list-unstyled">`;
-                                if (github != "" || github != null){ htmlTemplate += `<li class="mb-3"><a href="${github}"><span class="fa-container text-center mr-2"><i class="fab fa-github"></i></span>GitHub</a></li>`;}
-                                if (linkedin != "" || linkedin != null){ htmlTemplate +=   ` <li class="mb-3"><a href="${linkedin}"><span class="fa-container text-center mr-2"><i class="fab fa-linkedin"></i></i></span>LinkedIn</a></li>`;}
-                                if (socialmedia != "" || socialmedia != null) {htmlTemplate += `<li class="mb-3"><a href="${socialmedia}"><span class="fa-container text-center mr-2"><i class="fa fa-instagram"></i></span>Social Media</a></li>`;}
-                                if (website != "" || website != null) {htmlTemplate += `<li><a href="${website}"><span class="fa-container text-center mr-2"><i class="fa fa-globe"></i></span>Website</a></li>`;}
-                                htmlTemplate +=`</ul>
+                            <div class="secondary-info ml-md-auto mt-2">
+                                <ul class="resume-social list-unstyled">
+                                    <li class="mb-3"><a href="https://github.com/sahil2609"><span class="fa-container text-center mr-2"><i class="fab fa-github"></i></span>GitHub</a></li>
+                                    <li class="mb-3"><a href="www.linkedin.com/in/sahil2609"><span class="fa-container text-center mr-2"><i class="fab fa-linkedin"></i></i></span>LinkedIn</a></li>
+                                    <li class="mb-3"><a href="https://www.instagram.com/sahil._.2632/"><span class="fa-container text-center mr-2"><i class="fa fa-instagram"></i></span>Social Media</a></li>
+                                    <li><a href="https://www.instagram.com/sahil._.2632/"><span class="fa-container text-center mr-2"><i class="fa fa-globe"></i></span>Website</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -1535,34 +1443,38 @@ module.exports = (values) => {
                                             
                                             <div class="resume-timeline-item-header mb-2">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${head1}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Students Web Committee</h3>
                                                     <div class="resume-company-name ml-auto">
-                                                    ${pos1}</div>
+                                                        Senior Web Developer</div>
                                                 </div>
-                                                <div class="resume-position-time">${exduration1}</div>
+                                                <div class="resume-position-time">2018 — 2019</div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
-                                                <p>${expdesc1}</p>
+                                                <p>Developed and deployed a curtain raiser for an executive summary release prepared by IIT Guwahati, IIT Mandi
+                                                    & IISc Bangalore in 11 hours using HTML/CSS/Anime.js.
+                                                    Frontend development using tailwind for multiple projects under SWC.</p>
                                             </div>
     
-                                        </article>`;
+                                        </article>
     
-                                        if (head2 != "" || head2 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-5">
+                                        <article class="resume-timeline-item position-relative pb-5">
                                             
                                             <div class="resume-timeline-item-header mb-2">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${head2}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Students Web Committee</h3>
                                                     <div class="resume-company-name ml-auto">
-                                                    ${pos2}</div>
+                                                        Senior Web Developer</div>
                                                 </div>
-                                                <div class="resume-position-time">${exduration2}</div>
+                                                <div class="resume-position-time">2018 — 2019</div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
-                                                <p>${expdesc2}</p>
+                                                <p>Developed and deployed a curtain raiser for an executive summary release prepared by IIT Guwahati, IIT Mandi
+                                                    & IISc Bangalore in 11 hours using HTML/CSS/Anime.js.
+                                                    Frontend development using tailwind for multiple projects under SWC.</p>
                                             </div>
     
-                                        </article>`;}
-                                        htmlTemplate +=`</div>
+                                        </article>
+                                    </div>
                       </body>
                                     
                                 </div>
@@ -1576,74 +1488,80 @@ module.exports = (values) => {
                                             
                                             <div class="resume-timeline-item-header mb-2">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${title1}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Live Location Tracking</h3>
                                                     <div class="resume-company-name ml-auto">
-                                                    <a href = "${link1}" >GitHub</a></div>
+                                                    <a href = "https://github.com/sahil2609/LiveLocationTrackingProject" >GitHub</a></div>
                                                 </div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
                                                 <p>
-                                                ${desc1}
+                                                    A flutter application to track the location of your loved ones. Users can create a group and share their location in
+    that with features like updating password, deleting your account, option to leave the group.
+    Key Technologies: Dart, Flutter, Firebase
                                                 </p>
                                             </div>
     
-                                        </article>`;
+                                        </article>
     
-                                        if (title2 != "" ||title2 != null) {
-                                          htmlTemplate +=`<article class="resume-timeline-item position-relative pb-5">
+                                        <article class="resume-timeline-item position-relative pb-5">
                                             
-                                          <div class="resume-timeline-item-header mb-2">
-                                              <div class="d-flex flex-column flex-md-row">
-                                                  <h3 class="resume-position-title font-weight-bold mb-1">${title2}</h3>
-                                                  <div class="resume-company-name ml-auto"><a href = "${link2}" >GitHub</a></div>
-                                              </div>
-                                          </div>
-                                          <div class="resume-timeline-item-desc">
-                                              <p>
-                                              ${desc2}
-                                              </p>
-                                          </div>
+                                            <div class="resume-timeline-item-header mb-2">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Live Location Tracking</h3>
+                                                    <div class="resume-company-name ml-auto">
+                                                    <a href = "https://github.com/sahil2609/LiveLocationTrackingProject" >GitHub</a></div>
+                                                </div>
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    A flutter application to track the location of your loved ones. Users can create a group and share their location in
+    that with features like updating password, deleting your account, option to leave the group.
+    Key Technologies: Dart, Flutter, Firebase
+                                                </p>
+                                            </div>
     
-                                          </article>`;}
+                                        </article>
     
-                                        if (title3 != "" ||title3 != null) {
-                                          htmlTemplate +=`<article class="resume-timeline-item position-relative pb-5">
+                                        <article class="resume-timeline-item position-relative pb-5">
                                             
-                                          <div class="resume-timeline-item-header mb-2">
-                                              <div class="d-flex flex-column flex-md-row">
-                                                  <h3 class="resume-position-title font-weight-bold mb-1">${title3}</h3>
-                                                  <div class="resume-company-name ml-auto">
-                                                  <a href = "${link3}" >GitHub</a></div>
-                                              </div>
-                                          </div><!--//resume-timeline-item-header-->
-                                          <div class="resume-timeline-item-desc">
-                                              <p>
-                                              ${desc3}
-                                              </p>
-                                          </div>
+                                            <div class="resume-timeline-item-header mb-2">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Live Location Tracking</h3>
+                                                    <div class="resume-company-name ml-auto">
+                                                    <a href = "https://github.com/sahil2609/LiveLocationTrackingProject" >GitHub</a></div>
+                                                </div>
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    A flutter application to track the location of your loved ones. Users can create a group and share their location in
+    that with features like updating password, deleting your account, option to leave the group.
+    Key Technologies: Dart, Flutter, Firebase
+                                                </p>
+                                            </div>
     
-                                          </article>`;}
+                                        </article>
     
-                                        if (title4 != "" ||title4 != null){
-                                         htmlTemplate +=`<article class="resume-timeline-item position-relative pb-5">
+                                        <article class="resume-timeline-item position-relative pb-5">
                                             
-                                          <div class="resume-timeline-item-header mb-2">
-                                              <div class="d-flex flex-column flex-md-row">
-                                                  <h3 class="resume-position-title font-weight-bold mb-1">${title4}</h3>
-                                                  <div class="resume-company-name ml-auto">
-                                                  <a href = "${link4}" >GitHub</a></div>
-                                              </div>
-                                          </div><!--//resume-timeline-item-header-->
-                                          <div class="resume-timeline-item-desc">
-                                              <p>
-                                              ${desc4}
-                                              </p>
-                                          </div>
+                                            <div class="resume-timeline-item-header mb-2">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Live Location Tracking</h3>
+                                                    <div class="resume-company-name ml-auto">
+                                                    <a href = "https://github.com/sahil2609/LiveLocationTrackingProject" >GitHub</a></div>
+                                                </div>
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    A flutter application to track the location of your loved ones. Users can create a group and share their location in
+    that with features like updating password, deleting your account, option to leave the group.
+    Key Technologies: Dart, Flutter, Firebase
+                                                </p>
+                                            </div>
     
-                                          </article>`;}
+                                        </article>
                                         
                                         
-                                    htmlTemplate +=`</div>
+                                    </div>
                       </body>
                                     
                                     
@@ -1661,88 +1579,87 @@ module.exports = (values) => {
                                             
                                             <div class="resume-timeline-item-header mb-1.5">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${ach1}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Joint Entrance Examination Advanced 2020</h3>
                                                 </div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
                                                 <p>
-                                                ${achdesc1}
+                                                    Secured All India Rank 3461 among 0.15 million candidates appearing for the test.
                                                 </p>
                                             </div>
     
-                                        </article>`;
-                                        if (ach2 != "" ||ach2 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-2">
-                                            
-                                                <div class="resume-timeline-item-header mb-1.5">
-                                                    <div class="d-flex flex-column flex-md-row">
-                                                        <h3 class="resume-position-title font-weight-bold mb-1">${ach2}</h3>
-                                                    </div>
-                                                </div><!--//resume-timeline-item-header-->
-                                                <div class="resume-timeline-item-desc">
-                                                    <p>
-                                                    ${achdesc2}
-                                                    </p>
-                                                </div>
-        
-                                            </article>`;}
-                                        if (ach3 != "" ||ach3 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-2">
+                                        </article>
+                                        <article class="resume-timeline-item position-relative pb-2">
                                             
                                             <div class="resume-timeline-item-header mb-1.5">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${ach3}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Joint Entrance Examination Advanced 2020</h3>
                                                 </div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
                                                 <p>
-                                                ${achdesc3}
+                                                    Secured All India Rank 3461 among 0.15 million candidates appearing for the test.
                                                 </p>
                                             </div>
     
-                                        </article>`;}
-                                        if (ach4 != "" ||ach4 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-2">
+                                        </article>
+                                        <article class="resume-timeline-item position-relative pb-2">
                                             
                                             <div class="resume-timeline-item-header mb-1.5">
                                                 <div class="d-flex flex-column flex-md-row">
-                                                    <h3 class="resume-position-title font-weight-bold mb-1">${ach4}</h3>
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Joint Entrance Examination Advanced 2020</h3>
                                                 </div>
                                             </div><!--//resume-timeline-item-header-->
                                             <div class="resume-timeline-item-desc">
                                                 <p>
-                                                ${achdesc4}
+                                                    Secured All India Rank 3461 among 0.15 million candidates appearing for the test.
                                                 </p>
                                             </div>
     
-                                        </article>`;}
-                                        if (ach5 != "" ||ach5 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-2">
+                                        </article>
+                                        <article class="resume-timeline-item position-relative pb-2">
                                             
-                                                <div class="resume-timeline-item-header mb-1.5">
-                                                    <div class="d-flex flex-column flex-md-row">
-                                                        <h3 class="resume-position-title font-weight-bold mb-1">${ach5}</h3>
-                                                    </div>
-                                                </div><!--//resume-timeline-item-header-->
-                                                <div class="resume-timeline-item-desc">
-                                                    <p>
-                                                    ${achdesc5}
-                                                    </p>
+                                            <div class="resume-timeline-item-header mb-1.5">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Joint Entrance Examination Advanced 2020</h3>
                                                 </div>
-        
-                                            </article>`;}
-                                        if (ach6 != "" ||ach6 != null) {htmlTemplate +=`<article class="resume-timeline-item position-relative pb-2">
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    Secured All India Rank 3461 among 0.15 million candidates appearing for the test.
+                                                </p>
+                                            </div>
+    
+                                        </article>
+                                        <article class="resume-timeline-item position-relative pb-2">
                                             
-                                                <div class="resume-timeline-item-header mb-1.5">
-                                                    <div class="d-flex flex-column flex-md-row">
-                                                        <h3 class="resume-position-title font-weight-bold mb-1">${ach6}</h3>
-                                                    </div>
-                                                </div><!--//resume-timeline-item-header-->
-                                                <div class="resume-timeline-item-desc">
-                                                    <p>
-                                                    ${achdesc6}
-                                                    </p>
+                                            <div class="resume-timeline-item-header mb-1.5">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Completed Macroeconomics and Microeconomics Courses</h3>
                                                 </div>
-        
-                                            </article>`;}
-                                        
-                                    htmlTemplate+=`</div>
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    Analysed the macro and micro factors of aviation industry and the economics factors behind the revival of Jet Airways
+                                                </p>
+                                            </div>
+    
+                                        </article>
+                                        <article class="resume-timeline-item position-relative pb-2">
+                                            
+                                            <div class="resume-timeline-item-header mb-1.5">
+                                                <div class="d-flex flex-column flex-md-row">
+                                                    <h3 class="resume-position-title font-weight-bold mb-1">Joint Entrance Examination Advanced 2020</h3>
+                                                </div>
+                                            </div><!--//resume-timeline-item-header-->
+                                            <div class="resume-timeline-item-desc">
+                                                <p>
+                                                    Secured All India Rank 3461 among 0.15 million candidates appearing for the test.
+                                                </p>
+                                            </div>
+    
+                                        </article>
+                                    </div>
                                     
     
                       </body>
@@ -1759,29 +1676,29 @@ module.exports = (values) => {
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${qualification1}</div>
-                                                <div class="resume-degree-time ml-auto">${from1} — ${to1}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">B. Tech</div>
+                                                <div class="resume-degree-time ml-auto">2020 — 2024</div>
                                             </div>
-                                            <div class="resume-degree-org font-weight-bold mb-1">${college}</div>
-                                            <div class="resume-grade">CGPA - ${description1}</div>
+                                            <div class="resume-degree-org font-weight-bold mb-1">Indian Institute of Technology, Guwahati</div>
+                                            <div class="resume-grade">CGPA - 8.60</div>
                                         </li>
                                         <hr>    
                                         <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${qualification2}</div>
-                                                <div class="resume-degree-time ml-auto">${from2} - ${to2}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">Senior Secondary</div>
+                                                <div class="resume-degree-time ml-auto">2018 - 2020</div>
                                             </div>
-                                            <div class="resume-degree-org font-weight-bold mb-1">${school}</div>
-                                            <div class="resume-grade">CGPA/Percentage - ${description2}</div>
+                                            <div class="resume-degree-org font-weight-bold mb-1">CBSE Board</div>
+                                            <div class="resume-grade">CGPA/Percentage - 95.6%</div>
                                         </li>
                                         <hr> 
                                         <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${qualification3}</div>
-                                                <div class="resume-degree-time ml-auto">${from3} - ${to3}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">Secondary</div>
+                                                <div class="resume-degree-time ml-auto">2016 - 2018</div>
                                             </div>
-                                            <div class="resume-degree-org font-weight-bold mb-1">${school2}</div>
-                                            <div class="resume-grade">CGPA/Percentage - ${description3}</div>
+                                            <div class="resume-degree-org font-weight-bold mb-1">CBSE Board</div>
+                                            <div class="resume-grade">CGPA/Percentage - 94.6%</div>
                                         </li>
                                         <hr> 
                                     </ul>
@@ -1793,41 +1710,41 @@ module.exports = (values) => {
                                     <ul class="list-unstyled resume-awards-list">
                                         <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead1}</div>
-                                            <div class="resume-award-desc">${skilldesc1}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr> `;
-                                        if (skillhead2 != "" ||skillhead2 != null) {htmlTemplate +=`<li class="mb-2 pl-4 position-relative">
+                                        <hr> 
+                                        <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead2}</div>
-                                            <div class="resume-award-desc">${skilldesc2}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr> `;}
-                                        if (skillhead3 != "" ||skillhead3 != null) {htmlTemplate +=`<li class="mb-2 pl-4 position-relative">
+                                        <hr> 
+                                        <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead3}</div>
-                                            <div class="resume-award-desc">${skilldesc3}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr> `;}
-                                        if (skillhead4!= "" ||skillhead4 != null) {htmlTemplate +=`<li class="mb-2 pl-4 position-relative">
+                                        <hr> 
+                                        <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead4}</div>
-                                            <div class="resume-award-desc">${skilldesc4}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr> `;  } 
-                                        if (skillhead5 != "" ||skillhead5 != null) {htmlTemplate +=`<li class="mb-2 pl-4 position-relative">
+                                        <hr>    
+                                        <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead5}</div>
-                                            <div class="resume-award-desc">${skilldesc5}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr>`;}
-                                        if (skillhead6 != "" ||skillhead6 != null){ htmlTemplate +=`<li class="mb-2 pl-4 position-relative">
+                                        <hr>  
+                                        <li class="mb-2 pl-4 position-relative">
                                             <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-                                            <div class="resume-award-name">${skillhead6}</div>
-                                            <div class="resume-award-desc">${skilldesc6}</div>
+                                            <div class="resume-award-name">Programming</div>
+                                            <div class="resume-award-desc">HTML, CSS, JavaScript, NodeJs, ReactJs, Flutter*, Django*, OpenCV*</div>
                                         </li>
-                                        <hr>  `;}
-                                    htmlTemplate += `</ul>
+                                        <hr>  
+                                    </ul>
                                     <div style="text-align: right;"><i >* denotes Elementary Proficiency</i></div>
                                 </div>
                             </section>
@@ -1837,29 +1754,29 @@ module.exports = (values) => {
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${por1}</div>
-                                                <div class="resume-degree-time ml-auto">${porduration1}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">Senior Executive</div>
+                                                <div class="resume-degree-time ml-auto">June 2021 — Jan. 2022</div>
                                             </div>
-                                            <div class="resume-grade">${club1}</div>
+                                            <div class="resume-grade">E-Cell, IIT Guwahati</div>
                                         </li>
-                                        <hr>`;
-                                        if (por2 != "" ||por2 != null) {htmlTemplate +=`<li class="mb-2">
+                                        <hr>    
+                                        <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${por2}</div>
-                                                <div class="resume-degree-time ml-auto">${porduration2}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">Co-ordinator</div>
+                                                <div class="resume-degree-time ml-auto">June 2021 — Jan. 2022</div>
                                             </div>
-                                            <div class="resume-grade">${club2}</div>
+                                            <div class="resume-grade">Coding Club, IIT Guwahati</div>
                                         </li>
-                                        <hr> `;}
-                                        if (por3 != "" ||por3 != null) {htmlTemplate +=`<li class="mb-2">
+                                        <hr> 
+                                        <li class="mb-2">
                                             <div class="d-flex flex-column flex-md-row">
-                                                <div class="resume-degree-org font-weight-bold mb-1">${por3}</div>
-                                                <div class="resume-degree-time ml-auto">${porduration3}</div>
+                                                <div class="resume-degree-org font-weight-bold mb-1">Conference Affairs Coordinator</div>
+                                                <div class="resume-degree-time ml-auto">June 2021 — Jan. 2022</div>
                                             </div>
-                                            <div class="resume-grade">${club3}</div>
+                                            <div class="resume-grade">MUN, IIT Guwahati</div>
                                         </li>
-                                        <hr> `;}
-                                        htmlTemplate += `    </ul>
+                                        <hr> 
+                                    </ul>
                                 </div>
                             </section>
                             
@@ -1873,9 +1790,5 @@ module.exports = (values) => {
       
     
     </body>
-    </html> 
-    `;
-    return htmlTemplate;
-
-
-};
+    </html> `;
+}
